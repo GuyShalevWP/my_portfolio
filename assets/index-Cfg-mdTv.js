@@ -66,7 +66,7 @@ Error generating stack: `+n.message+`
         box-sizing: border-box;
     }
     body {
-        background-color: #333;
+        background-color: #333333;
         color: #f0f0f0;
     }
-    `,zx=it.lazy(()=>FS(()=>import("./PageLayout-D0etZyzC.js"),[])),Vx=()=>fe.jsxs(fe.Fragment,{children:[fe.jsx(_x,{}),fe.jsx(it.Suspense,{fallback:fe.jsx(Cx,{}),children:fe.jsx(zx,{})})]});PS.createRoot(document.getElementById("root")).render(fe.jsx(it.StrictMode,{children:fe.jsx(Vx,{})}));export{qf as d,fe as j,G0 as m,it as r};
+    `,zx=it.lazy(()=>FS(()=>import("./PageLayout-C0ju6hm0.js"),[])),Vx=()=>fe.jsxs(fe.Fragment,{children:[fe.jsx(_x,{}),fe.jsx(it.Suspense,{fallback:fe.jsx(Cx,{}),children:fe.jsx(zx,{})})]});PS.createRoot(document.getElementById("root")).render(fe.jsx(it.StrictMode,{children:fe.jsx(Vx,{})}));export{qf as d,fe as j,G0 as m,it as r};
