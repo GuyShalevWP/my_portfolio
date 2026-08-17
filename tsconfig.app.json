@@ -9,9 +9,10 @@
 
     /* Path aliases */
     "paths": {
-      "@assets/*": ["./src/assts/*"],
+      "@assets/*": ["./src/assets/*"],
       "@data/*": ["./src/data/*"],
       "@features/*": ["./src/features/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@styles/*": ["./src/styles/*"]
     },

@@ -1,6 +1,9 @@
 import { Variants } from "framer-motion";
-import { ComingSoonContainer, Letter } from "./ComingSoon.styles";
-import { WavyTextProps } from "./ComingSoon.types";
+import { WavyTextProps } from "@features/coming-soon/ComingSoon.types";
+import {
+  ComingSoonContainer,
+  Letter,
+} from "@features/coming-soon/ComingSoon.styles";
 
 const ComingSoon = ({ text }: WavyTextProps) => {
   const letterVariants: Variants = {

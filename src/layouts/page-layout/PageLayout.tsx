@@ -1,6 +1,7 @@
 import ComingSoon from "@features/coming-soon/ComingSoon";
 import ContactArea from "@features/contact-area/ContactArea";
-import { PageLayoutContainer } from "./PageLayout.styles";
+import HireMe from "@features/hire-me/HireMe";
+import { PageLayoutContainer } from "@layouts/page-layout/PageLayout.styles";
 
 const PageLayout = () => {
   return (
@@ -10,6 +11,7 @@ const PageLayout = () => {
         <h2 style={{ fontSize: "2rem", textAlign: "center" }}>Web Developer</h2>
       </header>
       <ComingSoon text="Coming Soon..." />
+      <HireMe />
       <ContactArea />
     </PageLayoutContainer>
   );
