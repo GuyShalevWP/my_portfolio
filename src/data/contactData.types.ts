@@ -1,11 +1,11 @@
 export interface ContactDataTypes {
-    linkedin: ContactLinksTypes;
-    github: ContactLinksTypes;
-    email: ContactLinksTypes;
+  linkedin: ContactLinksTypes;
+  github: ContactLinksTypes;
+  email: ContactLinksTypes;
 }
 
 interface ContactLinksTypes {
-    icon: string;
-    alt: string;
-    link: string;
+  icon: string;
+  alt: string;
+  link: string;
 }

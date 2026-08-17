@@ -25,11 +25,8 @@ Welcome to my web developer portfolio! This project showcases my skills and proj
 This portfolio is built using modern web development technologies to demonstrate my proficiency in creating responsive and interactive web applications.
 
 ## Built With
-* [![React][React.js]][React-url]
-* [![TypeScript][TypeScript]][TypeScript-url]
-* [![Vite][Vite]][Vite-url]
-* [![Styled-Components][Styled-Components]][Styled-Somponents-url]
-* [![MotionFramer][MotionFramer]][MotionFramer-url]
+[![React][React.js]][React-url] &emsp; [![TypeScript][TypeScript]][TypeScript-url] &emsp; [![Vite][Vite]][Vite-url] &emsp; [![Styled-Components][Styled-Components]][Styled-Somponents-url] &emsp; [![MotionFramer][MotionFramer]][MotionFramer-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,4 +1,4 @@
-import { contactData } from "../../../data/contactData";
+import { contactData } from "../../data/contactData";
 import {
     ContactAnchor,
     ContactAreaContainer,
