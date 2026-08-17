@@ -1,10 +1,13 @@
+import { useDisableContextMenu } from "@hooks/useDisableContextMenu";
+import LoadingPage from "@layouts/loading/LoadingPage";
+import { GlobalStyles } from "@styles/GlobalStyles";
 import { lazy, Suspense } from "react";
-import LoadingPage from "./layouts/loading/LoadingPage";
-import { GlobalStyles } from "./styles/GlobalStyles";
 
-const PageLayout = lazy(() => import("./layouts/page-layout/PageLayout"));
+const PageLayout = lazy(() => import("@layouts/page-layout/PageLayout"));
 
 const App = () => {
+  useDisableContextMenu();
+
   return (
     <>
       <GlobalStyles />

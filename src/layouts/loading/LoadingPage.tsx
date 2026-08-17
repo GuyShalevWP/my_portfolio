@@ -1,5 +1,8 @@
-import { LoadingContainer, LoadingDot } from "./LoadingPage.styles";
 import { Variants } from "framer-motion";
+import {
+  LoadingContainer,
+  LoadingDot,
+} from "@layouts/loading/LoadingPage.styles";
 
 const LoadingPage = () => {
   const dotVariants: Variants = {
