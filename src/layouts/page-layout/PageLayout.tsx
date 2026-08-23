@@ -1,18 +1,12 @@
-import ComingSoon from "@features/coming-soon/ComingSoon";
-import ContactArea from "@features/contact-area/ContactArea";
-import HireMe from "@features/hire-me/HireMe";
 import { PageLayoutContainer } from "@layouts/page-layout/PageLayout.styles";
+import Header from "@layouts/page-layout/header/Header";
+import Content from "@layouts/page-layout/content/Content";
 
 const PageLayout = () => {
   return (
     <PageLayoutContainer>
-      <header>
-        <h1 style={{ fontSize: "5rem", textAlign: "center" }}>Guy Shalev</h1>
-        <h2 style={{ fontSize: "2rem", textAlign: "center" }}>Web Developer</h2>
-      </header>
-      <ComingSoon text="Coming Soon..." />
-      <HireMe />
-      <ContactArea />
+      <Header />
+      <Content />
     </PageLayoutContainer>
   );
 };

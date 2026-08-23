@@ -1,3 +1,5 @@
+import { theme } from "@styles/GlobalStyles";
+import { pxToRem } from "@utils/size-convertor-utils";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -5,8 +7,7 @@ export const Container = styled.div`
   background: #4a4947;
   border-radius: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  margin: 2rem auto;
+  max-width: ${pxToRem(550)};
   text-align: center;
 `;
 
@@ -20,7 +21,7 @@ export const Title = styled.h1`
 export const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: ${theme.spacing["xxs"]};
   justify-content: center;
   margin-bottom: 1rem;
 `;

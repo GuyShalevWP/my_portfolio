@@ -1,11 +1,9 @@
 import { theme } from "@styles/GlobalStyles";
 import styled from "styled-components";
 
-export const PageLayoutContainer = styled.div`
+export const ContentContainer = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: ${theme.spacing["xl"]};
-  height: 100vh;
-  width: 100vw;
 `;
