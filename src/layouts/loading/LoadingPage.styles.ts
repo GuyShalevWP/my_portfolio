@@ -1,5 +1,4 @@
 import { theme } from "@styles/GlobalStyles";
-import { pxToRem } from "@utils/size-convertor-utils";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
@@ -8,13 +7,14 @@ export const LoadingContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: ${theme.spacing["xs"]};
+  gap: ${theme.spacing.s3};
+  background: ${theme.color.canvas};
 `;
 
 export const LoadingDot = styled(motion.div)`
-  width: ${pxToRem(20)};
-  height: ${pxToRem(20)};
-  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: ${theme.radius.full};
   will-change: transform;
-  background-color: #fff;
+  background-color: ${theme.color.signal};
 `;
