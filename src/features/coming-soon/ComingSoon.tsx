@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Variants } from "motion/react";
 import { WavyTextProps } from "@features/coming-soon/ComingSoon.types";
 import {
   ComingSoonContainer,
