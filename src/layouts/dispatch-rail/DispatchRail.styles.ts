@@ -109,6 +109,14 @@ export const SheetBackdrop = styled.div`
   @media (max-width: ${theme.breakpoint.mobile}) {
     display: block;
   }
+
+  /* The [hidden] attribute selector has higher specificity than the plain
+     class selector above, so this wins over the media query regardless of
+     cascade order and keeps the backdrop unrendered (and un-hit-testable)
+     whenever isOpen is false, at any viewport. */
+  &[hidden] {
+    display: none;
+  }
 `;
 
 export const Sheet = styled.div`
