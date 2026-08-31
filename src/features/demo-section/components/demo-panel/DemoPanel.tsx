@@ -1,22 +1,12 @@
 import StatusDot from "../../../../components/status-dot/StatusDot";
-import {
-  DemoHeader,
-  DemoPanelContainer,
-  Meta,
-  Placeholder,
-  PlaceholderLabel,
-  PlaceholderText,
-  Rule,
-  Title,
-} from "./DemoPanel.styles";
+import { DemoHeader, DemoPanelContainer, Meta, Rule, Title } from "./DemoPanel.styles";
 import type { DemoPanelProps } from "./DemoPanel.types";
 
 /**
- * The frame and the panel container only — the interactive board is
- * stage 3. The interior is a clearly-marked static placeholder, not a
- * mock of the finished game.
+ * The shared frame every demo panel uses: header, meta line, rule copy,
+ * then the playable game passed in as `children`.
  */
-const DemoPanel = ({ content }: DemoPanelProps) => {
+const DemoPanel = ({ content, children }: DemoPanelProps) => {
   return (
     <DemoPanelContainer>
       <DemoHeader>
@@ -25,11 +15,7 @@ const DemoPanel = ({ content }: DemoPanelProps) => {
       </DemoHeader>
       <Meta>{content.meta}</Meta>
       <Rule>{content.rule}</Rule>
-      <Placeholder>
-        <StatusDot variant="queued" />
-        <PlaceholderLabel>Stage 3 · queued</PlaceholderLabel>
-        <PlaceholderText>{content.placeholder}</PlaceholderText>
-      </Placeholder>
+      {children}
     </DemoPanelContainer>
   );
 };

@@ -2,12 +2,13 @@ import { demo } from "@data/demo";
 import SectionFrame from "../../components/section-frame/SectionFrame";
 import SectionHeading from "../../components/section-heading/SectionHeading";
 import DemoPanel from "./components/demo-panel/DemoPanel";
+import Dispatch from "./components/dispatch/Dispatch";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 import { Demos, Intro } from "./DemoSection.styles";
 
 /**
- * Try it before you talk to it — section frame and the two panel
- * containers only. The interactive tic-tac-toe and dispatch games ship
- * in stage 3; this renders their frames with static placeholders.
+ * Try it before you talk to it — the section frame, the two panel
+ * frames, and the two playable games inside them.
  */
 const DemoSection = () => {
   return (
@@ -15,8 +16,12 @@ const DemoSection = () => {
       <SectionHeading id="demo-heading" heading={demo.heading} kicker={demo.kicker} />
       <Intro>{demo.intro}</Intro>
       <Demos>
-        <DemoPanel content={demo.panels.ticTacToe} />
-        <DemoPanel content={demo.panels.dispatch} />
+        <DemoPanel content={demo.panels.ticTacToe}>
+          <TicTacToe />
+        </DemoPanel>
+        <DemoPanel content={demo.panels.dispatch}>
+          <Dispatch />
+        </DemoPanel>
       </Demos>
     </SectionFrame>
   );

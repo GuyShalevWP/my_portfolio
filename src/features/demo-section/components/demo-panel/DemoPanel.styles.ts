@@ -43,32 +43,3 @@ export const Rule = styled.p`
   margin-bottom: ${theme.spacing.s5};
   line-height: 1.5;
 `;
-
-export const Placeholder = styled.div`
-  border: 1px dashed ${theme.color.line};
-  border-radius: ${theme.radius.sm};
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: ${theme.spacing.s3};
-  text-align: center;
-  padding: ${theme.spacing.s5};
-`;
-
-export const PlaceholderLabel = styled.span`
-  font-family: ${theme.font.mono};
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: ${theme.color.muted};
-`;
-
-export const PlaceholderText = styled.p`
-  font-family: ${theme.font.body};
-  font-size: 15px;
-  color: ${theme.color.muted};
-  line-height: 1.5;
-  max-width: 36ch;
-`;
