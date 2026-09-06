@@ -10,7 +10,6 @@
     /* Path aliases */
     "paths": {
       "@app-types/*": ["./src/types/*"],
-      "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@data/*": ["./src/data/*"],
       "@features/*": ["./src/features/*"],
