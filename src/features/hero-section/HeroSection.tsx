@@ -1,5 +1,5 @@
-import { useReducedMotion, type Variants } from "motion/react";
 import { hero } from "@data/hero";
+import { useBootStagger } from "@hooks/useBootStagger";
 import ButtonLink from "../../components/button-link/ButtonLink";
 import AgentConsole from "./components/agent-console/AgentConsole";
 import {
@@ -15,42 +15,25 @@ import {
   Tag,
 } from "./HeroSection.styles";
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.04 } },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
-};
-
 /** The claim — hero headline, prose, CTAs, and the agent-team console. */
 const HeroSection = () => {
-  const reducedMotion = useReducedMotion();
-  const animateBoot = !reducedMotion;
+  const { containerProps, itemProps } = useBootStagger({ stagger: 0.04, itemY: 16, itemDuration: 0.2 });
 
   return (
     <HeroWrap id="claim" aria-labelledby="claim-heading">
-      <HeroGrid
-        variants={animateBoot ? containerVariants : undefined}
-        initial={animateBoot ? "hidden" : undefined}
-        animate={animateBoot ? "visible" : undefined}
-      >
+      <HeroGrid {...containerProps}>
         <HeroLeft>
-          <Tag variants={animateBoot ? itemVariants : undefined}>{hero.tag}</Tag>
+          <Tag {...itemProps}>{hero.tag}</Tag>
           <Heading id="claim-heading">
-            <IntroLine variants={animateBoot ? itemVariants : undefined}>
-              {hero.intro}
-            </IntroLine>
-            <Headline variants={animateBoot ? itemVariants : undefined}>
+            <IntroLine {...itemProps}>{hero.intro}</IntroLine>
+            <Headline {...itemProps}>
               {hero.headlineLead}
               <br />
               {hero.headlineTail} <Accent>{hero.headlineAccent}</Accent>
             </Headline>
           </Heading>
-          <Sub variants={animateBoot ? itemVariants : undefined}>{hero.sub}</Sub>
-          <CtaRow variants={animateBoot ? itemVariants : undefined}>
+          <Sub {...itemProps}>{hero.sub}</Sub>
+          <CtaRow {...itemProps}>
             <ButtonLink href={hero.primaryCta.href} variant="primary">
               {hero.primaryCta.label}
             </ButtonLink>
