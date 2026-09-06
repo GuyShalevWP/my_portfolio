@@ -1,8 +1,7 @@
-import { useReducedMotion } from "motion/react";
 import VisuallyHidden from "@components/visually-hidden/VisuallyHidden";
 import { dispatchSpecialists, dispatchTicket } from "@data/dispatch";
-import { DURATION_BASE, EASE_OUT } from "@utils/motion-easing-utils";
 import type { DispatchOutcome } from "@app-types/Dispatch";
+import GameResult from "../game-result/GameResult";
 import { useDispatch } from "./hooks/useDispatch";
 import {
   AgentsList,
@@ -10,9 +9,6 @@ import {
   ChipNum,
   GameArea,
   ReassignButton,
-  Result,
-  ResultBody,
-  ResultTitle,
   RunButton,
   TicketBody,
   TicketCard,
@@ -37,18 +33,9 @@ const EMPTY_BODY =
  * specific mistake named, draw = shipped with warnings. */
 const Dispatch = () => {
   const { assigned, ticketStatus, outcome, result, toggleAssign, run, reassign } = useDispatch();
-  const reducedMotion = useReducedMotion();
 
   const variant = variantForOutcome(outcome);
   const canRun = assigned.length > 0 && outcome === null;
-
-  const resultMotion = reducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: -8 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: DURATION_BASE, ease: EASE_OUT },
-      };
 
   const announcement = outcome && result ? `${result.title} ${result.body}` : `Ticket ${ticketStatus.toLowerCase()}.`;
 
@@ -96,18 +83,10 @@ const Dispatch = () => {
       <VisuallyHidden aria-live="polite">{announcement}</VisuallyHidden>
 
       {!outcome && assigned.length === 0 && (
-        <Result>
-          <ResultTitle>{EMPTY_TITLE}</ResultTitle>
-          <ResultBody>{EMPTY_BODY}</ResultBody>
-        </Result>
+        <GameResult animate={false} title={EMPTY_TITLE} body={EMPTY_BODY} />
       )}
 
-      {outcome && result && (
-        <Result $variant={variant} {...resultMotion}>
-          <ResultTitle $variant={variant}>{result.title}</ResultTitle>
-          <ResultBody>{result.body}</ResultBody>
-        </Result>
-      )}
+      {outcome && result && <GameResult variant={variant} title={result.title} body={result.body} />}
 
       {outcome && (
         <ReassignButton type="button" onClick={reassign}>
