@@ -19,11 +19,11 @@ const EMPTY_BODY =
 // doesn't have.
 const WIN_TITLE = "You win.";
 const WIN_BODY =
-  "It always takes the win when one's there and blocks when it has to — this time, neither move was enough.";
+  "It always takes the win when one's there and blocks when it has to. This time, neither move was enough.";
 
 const LOSE_TITLE = "Agent wins.";
 const LOSE_BODY =
-  "It took the win the moment you left one open. Play again — it doesn't get any smarter, so this is winnable.";
+  "It took the win the moment you left one open. Play again: it doesn't get any smarter, so this is winnable.";
 
 const DRAW_TITLE = "Draw.";
 const DRAW_BODY = "Neither of us made a mistake. That's the correct result and we both know it.";

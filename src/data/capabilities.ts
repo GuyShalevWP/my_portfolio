@@ -13,7 +13,7 @@ export const capabilities: CapabilitySectionContent = {
       label: "Systems",
       headingLead: "Reads the systems",
       headingTail: "nobody wants to read.",
-      body: "Hand me a legacy enterprise codebase with no map and I'll untangle it and write the map. That's the work that earned the move into full-stack — not a certificate, a pile of undocumented systems that suddenly had documentation.",
+      body: "Hand me a legacy enterprise codebase with no map and I'll untangle it and write the map. That's the work that earned the move into full-stack. Not a certificate. A pile of undocumented systems that suddenly had documentation.",
     },
     {
       label: "Range",

@@ -24,7 +24,7 @@ const variantForOutcome = (outcome: DispatchOutcome | null): "win" | "lose" | "w
 
 const EMPTY_TITLE = "Ticket ready.";
 const EMPTY_BODY =
-  "Assign your first agent. Order matters — the same four in a different sequence give a different result.";
+  "Assign your first specialist. Order matters: the same four in a different sequence give a different result.";
 
 /** The demo section's Dispatch game: the visitor plays the lead agent,
  * clicking specialists onto TICKET-041 in the order they'd run them,

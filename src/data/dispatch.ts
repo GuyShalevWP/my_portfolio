@@ -52,7 +52,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "MERGED",
     result: {
       title: "Shipped.",
-      body: "Backend fixed the cache invalidation and frontend re-polled — QA and security both signed off before it merged.",
+      body: "Backend fixed the cache invalidation and frontend re-polled. QA and security both signed off before it merged.",
     },
     matches: (order) =>
       order.length === 4 && runsBefore(order, "backend", "frontend") && has(order, "qa") && has(order, "security"),
@@ -63,7 +63,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "MERGED ⚠",
     result: {
       title: "Shipped with warnings.",
-      body: "It works and QA passed. But nobody reviewed the new endpoint, and it's unauthenticated. Merged — with a follow-up ticket you now own.",
+      body: "It works and QA passed. But nobody reviewed the new endpoint, and it's unauthenticated. It merged, with a follow-up ticket you now own.",
     },
     matches: (order) => runsBefore(order, "backend", "frontend") && has(order, "qa") && !has(order, "security"),
   },
@@ -73,7 +73,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "MERGED ⚠",
     result: {
       title: "Shipped with warnings.",
-      body: "It works — backend fixed the cache, frontend re-polled. But nobody verified it before merge. Merged — with a follow-up ticket to add QA coverage.",
+      body: "It works: backend fixed the cache, frontend re-polled. But nobody verified it before merge. It merged, with a follow-up ticket to add QA coverage.",
     },
     matches: (order) => runsBefore(order, "backend", "frontend") && !has(order, "qa"),
   },
@@ -83,7 +83,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "BLOCKED",
     result: {
       title: "Blocked.",
-      body: "You shipped without QA. Frontend patched the display before backend fixed the cache, so the balance is still stale — it just refreshes prettier. Reassign and run again.",
+      body: "You shipped without QA. Frontend patched the display before backend fixed the cache, so the balance is still stale, it just refreshes prettier. Reassign and run again.",
     },
     matches: (order) => runsBefore(order, "frontend", "backend") && !has(order, "qa"),
   },
@@ -93,7 +93,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "BLOCKED",
     result: {
       title: "Blocked.",
-      body: "QA caught it, but too late — frontend had already patched the display before backend fixed the cache, so the balance is still stale underneath. Reassign backend first and run again.",
+      body: "QA caught it, but too late: frontend had already patched the display before backend fixed the cache, so the balance is still stale underneath. Reassign backend first and run again.",
     },
     matches: (order) => runsBefore(order, "frontend", "backend") && has(order, "qa"),
   },
