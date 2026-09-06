@@ -9,8 +9,6 @@ export interface ConsoleRow {
 }
 
 export interface HeroContent {
-  /** Mono-label kicker, e.g. "NOW SHIPPING · V1 · GUY SHALEV". */
-  tag: string;
   /** Light-weight (200) intro line, e.g. "Most developers use AI." */
   intro: string;
   /** Bold (800) headline, first line. */

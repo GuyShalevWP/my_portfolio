@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { theme } from "@styles/GlobalStyles";
-import MonoLabel from "../../components/mono-label/MonoLabel";
 import Panel from "../../components/panel/Panel";
 
 export const Caps = styled.div`
@@ -30,10 +29,6 @@ export const WideText = styled.div`
   flex: 1;
 `;
 
-export const WideKicker = styled(MonoLabel)`
-  display: block;
-`;
-
 export const WideHeading = styled.h3`
   font-family: ${theme.font.display};
   font-weight: 700;
@@ -41,7 +36,6 @@ export const WideHeading = styled.h3`
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: ${theme.color.ink};
-  margin-top: ${theme.spacing.s4};
   margin-bottom: ${theme.spacing.s4};
 
   @media (max-width: ${theme.breakpoint.mobile}) {

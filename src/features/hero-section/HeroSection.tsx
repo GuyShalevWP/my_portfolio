@@ -12,10 +12,11 @@ import {
   Headline,
   IntroLine,
   Sub,
-  Tag,
 } from "./HeroSection.styles";
 
-/** The claim — hero headline, prose, CTAs, and the agent-team console. */
+/** The claim — hero headline, prose, CTAs, and the agent-team console.
+ * No eyebrow: a version stamp in a hero was the first thing a recruiter
+ * read, so the headline now opens the page on its own. */
 const HeroSection = () => {
   const { containerProps, itemProps } = useBootStagger({ stagger: 0.04, itemY: 16, itemDuration: 0.2 });
 
@@ -23,7 +24,6 @@ const HeroSection = () => {
     <HeroWrap id="claim" aria-labelledby="claim-heading">
       <HeroGrid {...containerProps}>
         <HeroLeft>
-          <Tag {...itemProps}>{hero.tag}</Tag>
           <Heading id="claim-heading">
             <IntroLine {...itemProps}>{hero.intro}</IntroLine>
             <Headline {...itemProps}>

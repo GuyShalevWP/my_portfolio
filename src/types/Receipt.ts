@@ -8,6 +8,5 @@ export interface ReceiptRow {
 
 export interface ReceiptsSectionContent {
   heading: string;
-  kicker: string;
   rows: ReceiptRow[];
 }

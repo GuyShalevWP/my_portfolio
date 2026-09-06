@@ -1,27 +1,13 @@
 import styled from "styled-components";
 import { theme } from "@styles/GlobalStyles";
-
-export const PageLayoutContainer = styled.div`
-  display: flex;
-  align-items: stretch;
-  min-height: 100vh;
-
-  @media (max-width: ${theme.breakpoint.mobile}) {
-    flex-direction: column;
-  }
-`;
+import { contentField } from "@styles/layout-mixins";
 
 export const Main = styled.main`
-  flex: 1;
-  min-width: 0;
+  min-height: 100vh;
 `;
 
 export const Wrap = styled.div`
-  padding: 0 ${theme.spacing.s9};
-
-  @media (max-width: ${theme.breakpoint.mobile}) {
-    padding: 0 ${theme.spacing.s5};
-  }
+  ${contentField}
 `;
 
 export const Foot = styled.footer`
@@ -29,7 +15,7 @@ export const Foot = styled.footer`
   font-family: ${theme.font.mono};
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: ${theme.color.faint};
+  color: ${theme.color.muted};
   line-height: 1.8;
   border-top: 1px solid ${theme.color.line};
 `;

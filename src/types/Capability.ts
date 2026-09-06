@@ -12,10 +12,8 @@ export interface TopologyNode {
 
 export interface CapabilitySectionContent {
   heading: string;
-  kicker: string;
   items: CapabilityItem[];
   wide: {
-    kicker: string;
     heading: string;
     body: string;
     bodyStrong: string;

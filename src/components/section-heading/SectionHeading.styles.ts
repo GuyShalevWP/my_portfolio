@@ -1,19 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "@styles/GlobalStyles";
 
-export const SectionHeadingRow = styled.div`
-  display: flex;
-  align-items: baseline;
-  gap: ${theme.spacing.s5};
+export const SectionHeadingRow = styled.div<{ $noMarginBottom?: boolean }>`
   margin-bottom: ${theme.spacing.s8};
 
   @media (max-width: ${theme.breakpoint.mobile}) {
-    flex-direction: column;
-    gap: ${theme.spacing.s3};
     margin-bottom: ${theme.spacing.s6};
   }
+
+  ${({ $noMarginBottom }) =>
+    $noMarginBottom &&
+    css`
+      margin-bottom: 0;
+    `}
 `;
 
+/** Reused directly by the loadout band's bespoke header — one h2
+ * typography rule for every heading on the page, per the comp's single
+ * `.h2` class. */
 export const H2 = styled.h2`
   font-family: ${theme.font.display};
   font-weight: ${theme.fontWeight.displayBold};

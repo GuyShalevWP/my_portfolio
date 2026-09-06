@@ -2,9 +2,11 @@ import styled, { css, keyframes } from "styled-components";
 import { theme } from "@styles/GlobalStyles";
 import type { StatusDotVariant } from "./StatusDot.types";
 
+/* The only dot that ever pulses is the top bar's amber availability
+ * dot, so this keyframe is amber, not generic. */
 const pulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.16); }
-  50% { box-shadow: 0 0 0 6px rgba(79, 209, 197, 0.05); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255, 176, 32, 0.16); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 176, 32, 0.05); }
 `;
 
 const variantStyle = ($variant: StatusDotVariant) => {
@@ -23,10 +25,10 @@ const variantStyle = ($variant: StatusDotVariant) => {
       return css`
         background: ${theme.color.alert};
       `;
-    case "queued":
+    case "idle":
     default:
       return css`
-        background: ${theme.color.queued};
+        background: ${theme.color.idle};
       `;
   }
 };

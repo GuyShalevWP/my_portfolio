@@ -34,6 +34,18 @@ export const Link = styled.a`
   color: ${theme.color.ink};
   border-bottom: 1px solid ${theme.color.signal};
   padding-bottom: 2px;
+  transition: color ${theme.motion.duration.fast} ${theme.motion.easing},
+    border-color ${theme.motion.duration.fast} ${theme.motion.easing};
+
+  &:hover {
+    color: ${theme.color.signalHi};
+    border-bottom-color: ${theme.color.signalHi};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${theme.color.signal};
+    outline-offset: 3px;
+  }
 
   @media (max-width: ${theme.breakpoint.mobile}) {
     font-size: 14px;

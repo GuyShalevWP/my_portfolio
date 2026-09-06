@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import type { SectionMeta } from "../../../types/Section";
 
 /**
- * Which section is currently in view — drives the rail's single "on"
- * item (live dot + 2s pulse) and the mobile bar's current-section label.
+ * Which section is currently in view — drives the top bar's active link
+ * (amber underline, `aria-current`) and the mobile bar's current-section
+ * trigger label.
  */
 export const useActiveSection = (sections: SectionMeta[]): string => {
   const [active, setActive] = useState(sections[0]?.id ?? "");

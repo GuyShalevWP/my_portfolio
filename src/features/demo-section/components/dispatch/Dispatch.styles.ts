@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { theme } from "@styles/GlobalStyles";
-import { buttonBase, buttonPrimary } from "@styles/button-mixins";
+import { buttonBase, buttonDisabled, buttonPrimary } from "@styles/button-mixins";
 
 export const GameArea = styled.div`
   display: flex;
@@ -48,16 +48,22 @@ export const Chip = styled.button<{ $picked: boolean }>`
   min-height: 40px;
   border-radius: ${theme.radius.sm};
   background: ${theme.color.surface2};
-  border: 1px solid ${theme.color.line};
+  border: 1px solid ${theme.color.idle};
   color: ${theme.color.muted};
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  transition: opacity ${theme.motion.duration.fast} ${theme.motion.easing};
+  transition: border-color ${theme.motion.duration.fast} ${theme.motion.easing},
+    color ${theme.motion.duration.fast} ${theme.motion.easing};
 
-  &:hover {
-    opacity: 0.88;
-  }
+  ${({ $picked }) =>
+    !$picked &&
+    css`
+      &:hover {
+        border-color: ${theme.color.muted};
+        color: ${theme.color.ink};
+      }
+    `}
 
   ${({ $picked }) =>
     $picked &&
@@ -67,31 +73,20 @@ export const Chip = styled.button<{ $picked: boolean }>`
     `}
 `;
 
-export const ChipNum = styled.span<{ $picked: boolean }>`
-  color: ${theme.color.faint};
-
-  ${({ $picked }) =>
-    $picked &&
-    css`
-      color: ${theme.color.signal};
-      font-weight: ${theme.fontWeight.monoBold};
-    `}
+/** Only rendered for a picked chip — an unpicked chip carries no
+ * placeholder glyph at all (no em dash), which fixed a low-contrast
+ * text color and the dash ban in one move. */
+export const ChipNum = styled.span`
+  color: ${theme.color.signal};
+  font-weight: ${theme.fontWeight.monoBold};
 `;
 
 export const RunButton = styled.button`
   ${buttonBase}
   ${buttonPrimary}
+  ${buttonDisabled}
   display: block;
   width: 100%;
   text-align: center;
   padding: 13px 22px;
-
-  &:hover:not(:disabled) {
-    opacity: 0.88;
-  }
-
-  &:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
 `;

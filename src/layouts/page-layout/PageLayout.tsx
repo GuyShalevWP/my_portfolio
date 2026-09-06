@@ -4,13 +4,13 @@ import DemoSection from "@features/demo-section/DemoSection";
 import HeroSection from "@features/hero-section/HeroSection";
 import ReceiptsSection from "@features/receipts-section/ReceiptsSection";
 import SpecSheetSection from "@features/spec-sheet-section/SpecSheetSection";
-import DispatchRail from "@layouts/dispatch-rail/DispatchRail";
-import { Foot, Main, PageLayoutContainer, Wrap } from "@layouts/page-layout/PageLayout.styles";
+import TopBar from "@layouts/top-bar/TopBar";
+import { Foot, Main, Wrap } from "@layouts/page-layout/PageLayout.styles";
 
 const PageLayout = () => {
   return (
-    <PageLayoutContainer>
-      <DispatchRail />
+    <>
+      <TopBar />
       <Main className="allow-selection">
         <Wrap>
           <HeroSection />
@@ -26,7 +26,7 @@ const PageLayout = () => {
           </Foot>
         </Wrap>
       </Main>
-    </PageLayoutContainer>
+    </>
   );
 };
 

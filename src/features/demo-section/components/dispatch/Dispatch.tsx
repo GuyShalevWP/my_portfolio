@@ -52,7 +52,6 @@ const Dispatch = () => {
         {dispatchSpecialists.map((specialist) => {
           const pickedIndex = assigned.indexOf(specialist.id);
           const picked = pickedIndex !== -1;
-          const num = picked ? String(pickedIndex + 1).padStart(2, "0") : "—";
 
           return (
             <Chip
@@ -67,9 +66,9 @@ const Dispatch = () => {
               }
               onClick={() => toggleAssign(specialist.id)}
             >
-              <ChipNum $picked={picked} aria-hidden="true">
-                {num}
-              </ChipNum>
+              {picked && (
+                <ChipNum aria-hidden="true">{String(pickedIndex + 1).padStart(2, "0")}</ChipNum>
+              )}
               {specialist.label}
             </Chip>
           );

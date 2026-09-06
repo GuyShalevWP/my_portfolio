@@ -6,7 +6,6 @@ export interface ContactRow {
 
 export interface ContactSectionContent {
   heading: string;
-  kicker: string;
   intro: string;
   rows: ContactRow[];
   cta: { label: string; href: string };

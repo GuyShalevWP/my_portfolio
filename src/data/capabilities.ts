@@ -2,7 +2,6 @@ import type { CapabilitySectionContent } from "../types/Capability";
 
 export const capabilities: CapabilitySectionContent = {
   heading: "What it does",
-  kicker: "Capability",
   items: [
     {
       label: "Delivery",
@@ -24,7 +23,6 @@ export const capabilities: CapabilitySectionContent = {
     },
   ],
   wide: {
-    kicker: "Agents · The difference",
     heading: "Builds agents. Not prompts.",
     body: "There's a gap between a developer who uses an AI assistant and one who architects the system those assistants run inside. I build the second kind. An investment-intelligence agent that scores opportunities through an LLM backend. A multi-agent software team where a lead agent plans the work, writes the tickets, delegates to specialist builder, QA, and security agents, and ships the pull request.",
     bodyStrong: "This site was designed and built by that team.",

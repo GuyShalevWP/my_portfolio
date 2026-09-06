@@ -4,18 +4,15 @@ export interface ThemeColor {
   surface2: string;
   ink: string;
   muted: string;
-  /** A step down from `muted` — secondary status words and footer copy. */
-  dim: string;
-  /** A step down from `dim` — the quietest text on the page (inline
-   * separators, unselected numerals). */
-  faint: string;
   line: string;
   signal: string;
+  /** Hover-only lift on `signal` — never used at rest. 11.4:1 on canvas. */
+  signalHi: string;
   live: string;
   alert: string;
   /** The neutral/inactive fill for a `StatusDot`, alongside `live` /
-   * `signal` / `alert`. */
-  queued: string;
+   * `signal` / `alert`. Fills and borders only — never text. */
+  idle: string;
 }
 
 export interface ThemeSpacing {
@@ -29,6 +26,7 @@ export interface ThemeSpacing {
   s8: string;
   s9: string;
   s10: string;
+  s11: string;
 }
 
 export interface ThemeRadius {
@@ -42,6 +40,9 @@ export interface ThemeFont {
   display: string;
   body: string;
   mono: string;
+  /** Silkscreen. Exactly two roles: the top bar wordmark and the demo
+   * keycap legends (11px ceiling). Never used for anything else. */
+  pixel: string;
 }
 
 export interface ThemeFontWeight {
@@ -64,7 +65,7 @@ export interface ThemeMotion {
 }
 
 export interface ThemeBreakpoint {
-  /** Below this, the dispatch rail collapses to the mobile top bar and
+  /** Below this, the top bar collapses to the mobile bar and sheet, and
    * every `.m` content override from the design comp applies. */
   mobile: string;
 }

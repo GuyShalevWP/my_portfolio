@@ -9,8 +9,8 @@ export interface UseBootStaggerOptions {
   itemY: number;
   /** Reveal transition duration, in seconds, for each child. */
   itemDuration: number;
-  /** Master on/off switch for call sites that only sometimes stagger
-   * (e.g. `RailNavList`'s `staggerBoot`). Defaults to `true`. */
+  /** Master on/off switch for call sites that only sometimes stagger.
+   * Defaults to `true`. */
   enabled?: boolean;
 }
 

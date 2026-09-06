@@ -10,7 +10,6 @@ const LINKEDIN_HANDLE = "linkedin.com/in/guy-shalev-93448b228";
 
 export const contact: ContactSectionContent = {
   heading: "Get it",
-  kicker: "Available",
   intro: "Open to full-time roles and client work. I answer my own email, usually the same day.",
   rows: [
     { key: "Email", label: EMAIL, href: `mailto:${EMAIL}` },
