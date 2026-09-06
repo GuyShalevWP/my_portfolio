@@ -70,21 +70,3 @@ export const Rationale = styled.p`
   line-height: 1.5;
 `;
 
-export const RematchButton = styled.button`
-  font-family: ${theme.font.mono};
-  font-size: 14px;
-  font-weight: ${theme.fontWeight.monoBold};
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: transparent;
-  color: ${theme.color.ink};
-  border: 1px solid ${theme.color.line};
-  border-radius: ${theme.radius.md};
-  padding: 13px 22px;
-  margin-top: ${theme.spacing.s5};
-  transition: opacity ${theme.motion.duration.fast} ${theme.motion.easing};
-
-  &:hover {
-    opacity: 0.88;
-  }
-`;

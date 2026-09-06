@@ -1,6 +1,7 @@
 import VisuallyHidden from "@components/visually-hidden/VisuallyHidden";
 import { dispatchSpecialists, dispatchTicket } from "@data/dispatch";
 import type { DispatchOutcome } from "@app-types/Dispatch";
+import { GameButton } from "../game-button/GameButton.styles";
 import GameResult from "../game-result/GameResult";
 import { useDispatch } from "./hooks/useDispatch";
 import {
@@ -8,7 +9,6 @@ import {
   Chip,
   ChipNum,
   GameArea,
-  ReassignButton,
   RunButton,
   TicketBody,
   TicketCard,
@@ -89,9 +89,9 @@ const Dispatch = () => {
       {outcome && result && <GameResult variant={variant} title={result.title} body={result.body} />}
 
       {outcome && (
-        <ReassignButton type="button" onClick={reassign}>
+        <GameButton type="button" onClick={reassign}>
           Reassign
-        </ReassignButton>
+        </GameButton>
       )}
     </GameArea>
   );

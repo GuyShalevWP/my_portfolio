@@ -1,9 +1,10 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import StatusDot from "@components/status-dot/StatusDot";
 import VisuallyHidden from "@components/visually-hidden/VisuallyHidden";
+import { GameButton } from "../game-button/GameButton.styles";
 import GameResult from "../game-result/GameResult";
 import { useTicTacToe } from "./hooks/useTicTacToe";
-import { BoardGrid, Cell, GameArea, Rationale, RematchButton, Thinking } from "./TicTacToe.styles";
+import { BoardGrid, Cell, GameArea, Rationale, Thinking } from "./TicTacToe.styles";
 import type { GameStatus } from "./TicTacToe.types";
 
 const EMPTY_TITLE = "You're X. Go first.";
@@ -159,9 +160,9 @@ const TicTacToe = () => {
       {status === "draw" && <GameResult fullWidth title={DRAW_TITLE} body={DRAW_BODY} />}
 
       {isGameOver(status) && (
-        <RematchButton type="button" onClick={handleRematch}>
+        <GameButton type="button" onClick={handleRematch}>
           Play again
-        </RematchButton>
+        </GameButton>
       )}
     </GameArea>
   );

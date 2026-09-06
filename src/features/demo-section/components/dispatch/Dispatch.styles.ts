@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { theme } from "@styles/GlobalStyles";
+import { buttonBase, buttonPrimary } from "@styles/button-mixins";
 
 export const GameArea = styled.div`
   display: flex;
@@ -78,20 +79,12 @@ export const ChipNum = styled.span<{ $picked: boolean }>`
 `;
 
 export const RunButton = styled.button`
-  font-family: ${theme.font.mono};
-  font-size: 14px;
-  font-weight: ${theme.fontWeight.monoBold};
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: ${theme.color.signal};
-  color: ${theme.color.canvas};
-  border: 0;
-  border-radius: ${theme.radius.md};
+  ${buttonBase}
+  ${buttonPrimary}
   display: block;
   width: 100%;
   text-align: center;
   padding: 13px 22px;
-  transition: opacity ${theme.motion.duration.fast} ${theme.motion.easing};
 
   &:hover:not(:disabled) {
     opacity: 0.88;
@@ -100,24 +93,5 @@ export const RunButton = styled.button`
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-  }
-`;
-
-export const ReassignButton = styled.button`
-  font-family: ${theme.font.mono};
-  font-size: 14px;
-  font-weight: ${theme.fontWeight.monoBold};
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: transparent;
-  color: ${theme.color.ink};
-  border: 1px solid ${theme.color.line};
-  border-radius: ${theme.radius.md};
-  padding: 13px 22px;
-  margin-top: ${theme.spacing.s5};
-  transition: opacity ${theme.motion.duration.fast} ${theme.motion.easing};
-
-  &:hover {
-    opacity: 0.88;
   }
 `;
