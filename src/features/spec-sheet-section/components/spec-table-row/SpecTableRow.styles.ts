@@ -36,6 +36,6 @@ export const Values = styled.div`
 `;
 
 export const Sep = styled.span`
-  color: #4a5568;
+  color: ${theme.color.dim};
   padding: 0 6px;
 `;

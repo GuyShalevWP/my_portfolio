@@ -75,7 +75,7 @@ export const CrowStatus = styled.span<{ $on: boolean }>`
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: ${({ $on }) => ($on ? theme.color.live : "#4A5568")};
+  color: ${({ $on }) => ($on ? theme.color.live : theme.color.dim)};
   flex: none;
 `;
 
@@ -84,5 +84,5 @@ export const ConsoleFooter = styled.p`
   font-family: ${theme.font.mono};
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: #4a5568;
+  color: ${theme.color.dim};
 `;

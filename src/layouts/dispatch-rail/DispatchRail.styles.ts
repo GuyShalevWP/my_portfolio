@@ -56,7 +56,7 @@ export const RailFoot = styled.p`
   font-size: 10px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  color: #3e4a5c;
+  color: ${theme.color.faint};
 `;
 
 /* ---------- mobile bar + sheet ---------- */

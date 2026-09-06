@@ -68,7 +68,7 @@ export const Chip = styled.button<{ $picked: boolean }>`
 `;
 
 export const ChipNum = styled.span<{ $picked: boolean }>`
-  color: #3e4a5c;
+  color: ${theme.color.faint};
 
   ${({ $picked }) =>
     $picked &&

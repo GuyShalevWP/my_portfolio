@@ -4,10 +4,18 @@ export interface ThemeColor {
   surface2: string;
   ink: string;
   muted: string;
+  /** A step down from `muted` — secondary status words and footer copy. */
+  dim: string;
+  /** A step down from `dim` — the quietest text on the page (inline
+   * separators, unselected numerals). */
+  faint: string;
   line: string;
   signal: string;
   live: string;
   alert: string;
+  /** The neutral/inactive fill for a `StatusDot`, alongside `live` /
+   * `signal` / `alert`. */
+  queued: string;
 }
 
 export interface ThemeSpacing {
