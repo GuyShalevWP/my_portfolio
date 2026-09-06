@@ -83,7 +83,7 @@ export const dispatchRules: DispatchRule[] = [
     ticketStatus: "BLOCKED",
     result: {
       title: "Blocked.",
-      body: "You shipped without QA. Frontend patched the display before backend fixed the cache, so the balance is still stale, it just refreshes prettier. Reassign and run again.",
+      body: "You shipped without QA. Frontend patched the display before backend fixed the cache, so the balance is still stale: it just refreshes prettier. Reassign and run again.",
     },
     matches: (order) => runsBefore(order, "frontend", "backend") && !has(order, "qa"),
   },
