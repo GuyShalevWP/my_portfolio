@@ -17,6 +17,9 @@ spacing/radius numbers.
 | `surface2` | `#1E2839` | Inset surfaces — topology nodes |
 | `ink` | `#E8EDF5` | Primary text |
 | `muted` | `#8C99AC` | Secondary text — 5.8:1 on canvas |
+| `dim` | `#4A5568` | Dimmer than `muted` — agent-console status text and row meta, spec-table row text, rail-nav inactive items |
+| `faint` | `#3E4A5C` | Dimmer still — dispatch chip numbers, rail footer, page footer |
+| `queued` | `#3A4557` | StatusDot's queued-state fill |
 | `line` | `#253044` | Hairlines, borders |
 | `signal` | `#FFB020` | The one accent — amber. 9.8:1 on canvas |
 | `live` | `#4FD1C5` | Functional status only — running / passing |

@@ -6,6 +6,5 @@
  */
 export const EASE_OUT: [number, number, number, number] = [0.2, 0.7, 0.3, 1];
 
-export const DURATION_FAST = 0.12;
 export const DURATION_BASE = 0.2;
 export const DURATION_SLOW = 0.4;
