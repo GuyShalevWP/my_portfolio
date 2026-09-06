@@ -3,11 +3,11 @@ import type { Theme } from "../types/Theme";
 
 /**
  * Design tokens — lifted from the approved comp
- * (projects/portfolio-design/portfolio-design-v2.html). Do not hardcode
- * hex values or literal spacing/radius numbers in component styles;
- * import this `theme` instead, matching the rest of this codebase's
- * convention of importing `theme` directly rather than reading it off
- * the styled-components `props.theme`.
+ * (projects/portfolio/design/portfolio-redesign-2026-09-06.html). Do not
+ * hardcode hex values or literal spacing/radius numbers in component
+ * styles; import this `theme` instead, matching the rest of this
+ * codebase's convention of importing `theme` directly rather than
+ * reading it off the styled-components `props.theme`.
  */
 export const theme: Theme = {
   color: {
@@ -16,13 +16,12 @@ export const theme: Theme = {
     surface2: "#1E2839",
     ink: "#E8EDF5",
     muted: "#8C99AC",
-    dim: "#4A5568",
-    faint: "#3E4A5C",
     line: "#253044",
     signal: "#FFB020",
+    signalHi: "#FFC24D",
     live: "#4FD1C5",
     alert: "#FF6B5B",
-    queued: "#3A4557",
+    idle: "#3A4557",
   },
   spacing: {
     s1: "4px",
@@ -34,7 +33,8 @@ export const theme: Theme = {
     s7: "48px",
     s8: "72px",
     s9: "96px",
-    s10: "160px",
+    s10: "128px",
+    s11: "160px",
   },
   radius: {
     sm: "4px",
@@ -46,6 +46,7 @@ export const theme: Theme = {
     display: "'Bricolage Grotesque', sans-serif",
     body: "'Newsreader', Georgia, serif",
     mono: "'JetBrains Mono', monospace",
+    pixel: "'Silkscreen', 'JetBrains Mono', monospace",
   },
   fontWeight: {
     displayLight: 200,

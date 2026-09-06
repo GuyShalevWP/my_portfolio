@@ -1,14 +1,13 @@
 import type { HeroContent } from "../types/Hero";
 
 export const hero: HeroContent = {
-  tag: "NOW SHIPPING · V1 · GUY SHALEV",
   intro: "Most developers use AI.",
-  headlineLead: "I build the",
-  headlineTail: "team that",
+  headlineLead: "I build the team",
+  headlineTail: "that",
   headlineAccent: "uses it.",
-  sub: "Full-stack developer. By day I ship production features into a Kubernetes microservices estate — frontend, backend services, REST APIs, the business logic underneath. The rest of the time I architect multi-agent systems that plan their own work, delegate it, and open the pull request.",
-  primaryCta: { label: "Run the demo", href: "#demo" },
-  secondaryCta: { label: "Talk to me", href: "#contact" },
+  sub: "Full-stack developer. I ship production features into a Kubernetes estate, and build the agent teams that ship their own.",
+  primaryCta: { label: "Play the demos", href: "#demo" },
+  secondaryCta: { label: "Email Guy", href: "mailto:guyshalevwp@gmail.com" },
   console: {
     label: "agent-team",
     status: "live",
@@ -16,12 +15,12 @@ export const hero: HeroContent = {
       { name: "lead", description: "plans the ticket, delegates", status: "running" },
       {
         name: "frontend",
-        description: "React · TypeScript\nstyled-components",
+        description: "React, TypeScript\nstyled-components",
         status: "building",
       },
       {
         name: "backend",
-        description: "NestJS · REST\nRedis · Kafka",
+        description: "NestJS, REST\nRedis, Kafka",
         status: "building",
       },
       { name: "qa", description: "live browser verification", status: "queued" },
@@ -32,6 +31,6 @@ export const hero: HeroContent = {
         hideOnMobile: true,
       },
     ],
-    footer: "5 AGENTS · 1 HUMAN · SHIPS PRs",
+    footer: "5 agents, 1 human, and it opens the PR.",
   },
 };

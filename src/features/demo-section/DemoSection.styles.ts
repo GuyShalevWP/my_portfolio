@@ -4,24 +4,25 @@ import { theme } from "@styles/GlobalStyles";
 export const Intro = styled.p`
   font-family: ${theme.font.body};
   font-size: 18px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: ${theme.color.muted};
-  /* -40px matches the comp's fine-tuned pull-up under the heading —
-   * not on the s1–s10 scale. */
-  margin: -40px 0 ${theme.spacing.s7};
-  max-width: 60ch;
+  max-width: 58ch;
+  margin: ${theme.spacing.s4} 0 ${theme.spacing.s8};
 
   @media (max-width: ${theme.breakpoint.mobile}) {
-    margin: 0 0 ${theme.spacing.s6};
     font-size: 17px;
+    margin: ${theme.spacing.s4} 0 ${theme.spacing.s6};
   }
 `;
 
 export const Demos = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: ${theme.spacing.s6};
+  align-items: stretch;
 
   @media (max-width: ${theme.breakpoint.mobile}) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.s5};
   }
 `;

@@ -3,7 +3,8 @@ import { theme } from "@styles/GlobalStyles";
 import Panel from "../../../../components/panel/Panel";
 
 export const DemoPanelContainer = styled(Panel)`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: ${theme.spacing.s6};
 
   @media (max-width: ${theme.breakpoint.mobile}) {
@@ -25,6 +26,10 @@ export const Title = styled.h3`
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: ${theme.color.ink};
+
+  @media (max-width: ${theme.breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 export const Meta = styled.p`

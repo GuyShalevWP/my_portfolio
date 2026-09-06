@@ -2,7 +2,6 @@ import type { ReceiptsSectionContent } from "../types/Receipt";
 
 export const receipts: ReceiptsSectionContent = {
   heading: "Already out there",
-  kicker: "In production",
   rows: [
     {
       key: "Live site",

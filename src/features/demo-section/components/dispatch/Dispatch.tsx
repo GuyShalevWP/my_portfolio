@@ -24,7 +24,7 @@ const variantForOutcome = (outcome: DispatchOutcome | null): "win" | "lose" | "w
 
 const EMPTY_TITLE = "Ticket ready.";
 const EMPTY_BODY =
-  "Assign your first agent. Order matters — the same four in a different sequence give a different result.";
+  "Assign your first specialist. Order matters: the same four in a different sequence give a different result.";
 
 /** The demo section's Dispatch game: the visitor plays the lead agent,
  * clicking specialists onto TICKET-041 in the order they'd run them,
@@ -52,7 +52,6 @@ const Dispatch = () => {
         {dispatchSpecialists.map((specialist) => {
           const pickedIndex = assigned.indexOf(specialist.id);
           const picked = pickedIndex !== -1;
-          const num = picked ? String(pickedIndex + 1).padStart(2, "0") : "—";
 
           return (
             <Chip
@@ -67,9 +66,9 @@ const Dispatch = () => {
               }
               onClick={() => toggleAssign(specialist.id)}
             >
-              <ChipNum $picked={picked} aria-hidden="true">
-                {num}
-              </ChipNum>
+              {picked && (
+                <ChipNum aria-hidden="true">{String(pickedIndex + 1).padStart(2, "0")}</ChipNum>
+              )}
               {specialist.label}
             </Chip>
           );

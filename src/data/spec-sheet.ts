@@ -1,32 +1,80 @@
 import type { SpecSheetContent } from "../types/SpecRow";
 
+/** The loadout band's three clusters. 26 item tiles total: 6 + 4 + 5 + 3
+ * + 6 + 2. */
 export const specSheet: SpecSheetContent = {
   heading: "What it's made of",
-  kicker: "Specification",
-  rows: [
+  kicker: "Loadout",
+  groups: [
     {
-      label: "Frontend",
-      values: ["React", "TypeScript", "TanStack Query", "styled-components", "HTML", "CSS"],
+      name: "Ships the client",
+      note: "Everything the person\nactually touches.",
+      slots: [
+        {
+          label: "Frontend",
+          tiles: [
+            { name: "React" },
+            { name: "TypeScript" },
+            { name: "TanStack Query" },
+            { name: "styled-components" },
+            { name: "HTML" },
+            { name: "CSS" },
+          ],
+        },
+      ],
     },
     {
-      label: "Backend",
-      values: ["NestJS", "Node.js", "Express.js", "REST APIs"],
+      name: "Ships the service",
+      note: "The half of full-stack\nthat nobody sees.",
+      slots: [
+        {
+          label: "Backend",
+          tiles: [
+            { name: "NestJS" },
+            { name: "Node.js" },
+            { name: "Express.js" },
+            { name: "REST APIs" },
+          ],
+        },
+        {
+          label: "Data & infra",
+          tiles: [
+            { name: "Redis", qualifier: "caching" },
+            { name: "Kafka", qualifier: "async messaging" },
+            { name: "Kubernetes", qualifier: "microservices" },
+            { name: "MongoDB" },
+            { name: "SQL / MySQL" },
+          ],
+        },
+      ],
     },
     {
-      label: "Data & infra",
-      values: ["Redis (caching)", "Kafka (async messaging)", "Kubernetes (microservices)", "MongoDB", "SQL / MySQL"],
-    },
-    {
-      label: "Languages",
-      values: ["JavaScript", "TypeScript", "Python"],
-    },
-    {
-      label: "AI & agents",
-      values: ["Claude Code", "Gemini", "Ollama", "Cursor", "OpenAI API", "TensorFlow"],
-    },
-    {
-      label: "Spoken",
-      values: ["Hebrew (native)", "English (fluent)"],
+      name: "Ships the rest",
+      note: "Languages, agents,\nand the two I speak.",
+      slots: [
+        {
+          label: "Languages",
+          tiles: [{ name: "JavaScript" }, { name: "TypeScript" }, { name: "Python" }],
+        },
+        {
+          label: "AI & agents",
+          tiles: [
+            { name: "Claude Code" },
+            { name: "Gemini" },
+            { name: "Ollama" },
+            { name: "Cursor" },
+            { name: "OpenAI API" },
+            { name: "TensorFlow" },
+          ],
+        },
+        {
+          label: "Spoken",
+          tiles: [
+            { name: "Hebrew", qualifier: "native" },
+            { name: "English", qualifier: "fluent" },
+          ],
+        },
+      ],
     },
   ],
 };

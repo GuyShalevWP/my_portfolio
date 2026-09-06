@@ -49,6 +49,12 @@ export const Cell = styled.button<{ $mark: "X" | "O" | null; $winning: boolean }
   &[aria-disabled="true"] {
     cursor: default;
   }
+
+  /* A free cell's hover is an amber border only, never a fill, so it
+   * never reads as already played. */
+  &:hover:not([aria-disabled="true"]) {
+    border-color: rgba(255, 176, 32, 0.55);
+  }
 `;
 
 export const Thinking = styled.div`

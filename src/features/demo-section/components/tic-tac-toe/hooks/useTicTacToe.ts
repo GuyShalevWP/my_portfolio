@@ -29,7 +29,7 @@ const BOT: NonNullable<Board[number]> = "O";
 const BOT_MOVE_DELAY_MS = 500;
 
 const RATIONALE: Record<BotMoveReason, string> = {
-  win: "Taking the win — it had three in a row.",
+  win: "Taking the win. It had three in a row.",
   block: "Blocking. You had two in a row.",
   open: "No forcing move yet. Taking the open square.",
 };
