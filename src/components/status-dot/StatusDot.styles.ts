@@ -26,7 +26,7 @@ const variantStyle = ($variant: StatusDotVariant) => {
     case "queued":
     default:
       return css`
-        background: #3a4557;
+        background: ${theme.color.queued};
       `;
   }
 };

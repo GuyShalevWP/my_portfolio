@@ -29,7 +29,7 @@ export const Foot = styled.footer`
   font-family: ${theme.font.mono};
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: #3e4a5c;
+  color: ${theme.color.faint};
   line-height: 1.8;
   border-top: 1px solid ${theme.color.line};
 `;

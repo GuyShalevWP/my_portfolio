@@ -16,10 +16,13 @@ export const theme: Theme = {
     surface2: "#1E2839",
     ink: "#E8EDF5",
     muted: "#8C99AC",
+    dim: "#4A5568",
+    faint: "#3E4A5C",
     line: "#253044",
     signal: "#FFB020",
     live: "#4FD1C5",
     alert: "#FF6B5B",
+    queued: "#3A4557",
   },
   spacing: {
     s1: "4px",

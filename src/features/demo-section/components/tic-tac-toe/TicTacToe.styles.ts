@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import styled, { css } from "styled-components";
 import { theme } from "@styles/GlobalStyles";
 
@@ -71,70 +70,3 @@ export const Rationale = styled.p`
   line-height: 1.5;
 `;
 
-export const Result = styled(motion.div)<{ $variant?: "win" | "lose" }>`
-  border-radius: ${theme.radius.sm};
-  padding: ${theme.spacing.s4};
-  margin-top: ${theme.spacing.s5};
-  border: 1px solid ${theme.color.line};
-  background: ${theme.color.surface2};
-  width: 100%;
-
-  ${({ $variant }) =>
-    $variant === "win" &&
-    css`
-      border-color: ${theme.color.live};
-    `}
-
-  ${({ $variant }) =>
-    $variant === "lose" &&
-    css`
-      border-color: ${theme.color.alert};
-    `}
-`;
-
-export const ResultTitle = styled.p<{ $variant?: "win" | "lose" }>`
-  font-family: ${theme.font.display};
-  font-weight: ${theme.fontWeight.displayBold};
-  font-size: 20px;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-  color: ${theme.color.ink};
-
-  ${({ $variant }) =>
-    $variant === "win" &&
-    css`
-      color: ${theme.color.live};
-    `}
-
-  ${({ $variant }) =>
-    $variant === "lose" &&
-    css`
-      color: ${theme.color.alert};
-    `}
-`;
-
-export const ResultBody = styled.p`
-  font-family: ${theme.font.body};
-  font-size: 15px;
-  line-height: 1.5;
-  color: ${theme.color.muted};
-`;
-
-export const RematchButton = styled.button`
-  font-family: ${theme.font.mono};
-  font-size: 14px;
-  font-weight: ${theme.fontWeight.monoBold};
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: transparent;
-  color: ${theme.color.ink};
-  border: 1px solid ${theme.color.line};
-  border-radius: ${theme.radius.md};
-  padding: 13px 22px;
-  margin-top: ${theme.spacing.s5};
-  transition: opacity ${theme.motion.duration.fast} ${theme.motion.easing};
-
-  &:hover {
-    opacity: 0.88;
-  }
-`;

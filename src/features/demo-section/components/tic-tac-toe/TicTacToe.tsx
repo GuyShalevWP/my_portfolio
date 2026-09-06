@@ -1,20 +1,10 @@
 import { useRef, useState, type KeyboardEvent } from "react";
-import { useReducedMotion } from "motion/react";
 import StatusDot from "@components/status-dot/StatusDot";
 import VisuallyHidden from "@components/visually-hidden/VisuallyHidden";
-import { DURATION_BASE, EASE_OUT } from "@utils/motion-easing-utils";
+import { GameButton } from "../game-button/GameButton.styles";
+import GameResult from "../game-result/GameResult";
 import { useTicTacToe } from "./hooks/useTicTacToe";
-import {
-  BoardGrid,
-  Cell,
-  GameArea,
-  Rationale,
-  RematchButton,
-  Result,
-  ResultBody,
-  ResultTitle,
-  Thinking,
-} from "./TicTacToe.styles";
+import { BoardGrid, Cell, GameArea, Rationale, Thinking } from "./TicTacToe.styles";
 import type { GameStatus } from "./TicTacToe.types";
 
 const EMPTY_TITLE = "You're X. Go first.";
@@ -66,7 +56,6 @@ const TicTacToe = () => {
   const { board, status, winningLine, rationale, handleCellClick, reset } = useTicTacToe();
   const [focusedIndex, setFocusedIndex] = useState(0);
   const cellRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const reducedMotion = useReducedMotion();
 
   const gameStarted = board.some((cell) => cell !== null);
   const busy = status === "bot-turn";
@@ -109,14 +98,6 @@ const TicTacToe = () => {
     cellRefs.current[0]?.focus();
   };
 
-  const resultMotion = reducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: -8 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: DURATION_BASE, ease: EASE_OUT },
-      };
-
   return (
     <GameArea>
       <BoardGrid role="group" aria-label="Tic-tac-toe board" aria-busy={busy}>
@@ -153,10 +134,7 @@ const TicTacToe = () => {
       <VisuallyHidden aria-live="polite">{announce(status, rationale)}</VisuallyHidden>
 
       {!gameStarted && status === "player-turn" && (
-        <Result>
-          <ResultTitle>{EMPTY_TITLE}</ResultTitle>
-          <ResultBody>{EMPTY_BODY}</ResultBody>
-        </Result>
+        <GameResult animate={false} fullWidth title={EMPTY_TITLE} body={EMPTY_BODY} />
       )}
 
       {gameStarted && !isGameOver(status) && (
@@ -172,30 +150,19 @@ const TicTacToe = () => {
       )}
 
       {status === "player-win" && (
-        <Result $variant="win" {...resultMotion}>
-          <ResultTitle $variant="win">{WIN_TITLE}</ResultTitle>
-          <ResultBody>{WIN_BODY}</ResultBody>
-        </Result>
+        <GameResult variant="win" fullWidth title={WIN_TITLE} body={WIN_BODY} />
       )}
 
       {status === "bot-win" && (
-        <Result $variant="lose" {...resultMotion}>
-          <ResultTitle $variant="lose">{LOSE_TITLE}</ResultTitle>
-          <ResultBody>{LOSE_BODY}</ResultBody>
-        </Result>
+        <GameResult variant="lose" fullWidth title={LOSE_TITLE} body={LOSE_BODY} />
       )}
 
-      {status === "draw" && (
-        <Result {...resultMotion}>
-          <ResultTitle>{DRAW_TITLE}</ResultTitle>
-          <ResultBody>{DRAW_BODY}</ResultBody>
-        </Result>
-      )}
+      {status === "draw" && <GameResult fullWidth title={DRAW_TITLE} body={DRAW_BODY} />}
 
       {isGameOver(status) && (
-        <RematchButton type="button" onClick={handleRematch}>
+        <GameButton type="button" onClick={handleRematch}>
           Play again
-        </RematchButton>
+        </GameButton>
       )}
     </GameArea>
   );

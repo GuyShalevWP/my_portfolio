@@ -1,17 +1,7 @@
-import { useReducedMotion, type Variants } from "motion/react";
 import StatusDot from "../../../../components/status-dot/StatusDot";
+import { useBootStagger } from "@hooks/useBootStagger";
 import { Item, ItemLink, List, StatusWord } from "./RailNavList.styles";
 import type { RailNavListProps } from "./RailNavList.types";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: -4 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.12 } },
-};
 
 /**
  * The six jump links, shared between the desktop rail and the mobile
@@ -24,19 +14,19 @@ const RailNavList = ({
   onNavigate,
   staggerBoot = false,
 }: RailNavListProps) => {
-  const reducedMotion = useReducedMotion();
-  const animateBoot = staggerBoot && !reducedMotion;
+  const { containerProps, itemProps } = useBootStagger({
+    stagger: 0.06,
+    itemY: -4,
+    itemDuration: 0.12,
+    enabled: staggerBoot,
+  });
 
   return (
-    <List
-      variants={animateBoot ? containerVariants : undefined}
-      initial={animateBoot ? "hidden" : undefined}
-      animate={animateBoot ? "visible" : undefined}
-    >
+    <List {...containerProps}>
       {sections.map((section) => {
         const active = section.id === activeId;
         return (
-          <Item key={section.id} variants={animateBoot ? itemVariants : undefined}>
+          <Item key={section.id} {...itemProps}>
             <ItemLink href={`#${section.id}`} $active={active} onClick={onNavigate}>
               <StatusDot variant={active ? "live" : "queued"} pulse={active} />
               {section.navLabel}

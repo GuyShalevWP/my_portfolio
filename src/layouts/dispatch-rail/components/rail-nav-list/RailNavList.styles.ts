@@ -24,6 +24,6 @@ export const ItemLink = styled.a<{ $active: boolean }>`
 export const StatusWord = styled.span<{ $active: boolean }>`
   margin-left: auto;
   font-size: 10px;
-  color: ${({ $active }) => ($active ? theme.color.live : "#4A5568")};
+  color: ${({ $active }) => ($active ? theme.color.live : theme.color.dim)};
   padding-right: ${theme.spacing.s5};
 `;
